@@ -34,5 +34,5 @@ ingress-controller:
 
 ---
 - apisix manager 负责把 Kubernetes 资源转换成网关配置，adc-server 负责把配置同步到 APISIX。真正转发业务请求的是 APISIX Gateway 
-- 两种模式开启后，ui端口无法访问，UI默认都是读取etcd数据
+- 两种模式开启后，ui端口可以访问但是无法读取service数据，UI默认都是读取etcd数据
 ---
