@@ -9,6 +9,17 @@ deployment:
   role: data_plane
   role_data_plane:
     config_provider: yaml
+# apisix deployment
+name: apisix-config-new
+configMap:
+  name: apisix-routes
+  items:
+    - key: apisix.yaml
+      path: apisix.yaml
+  defaultMode: 420
+                 - name: apisix-config-new
+                 mountPath: /usr/local/apisix/conf/apisix.yaml
+                 subPath: apisix.yaml         
 # apisix-ingress-controller configmap
 ingress-controller:
   enabled: true
